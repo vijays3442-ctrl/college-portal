@@ -1,5 +1,5 @@
 /**
- * Apex Global University — Client-side Interactive Controller
+ * Sunrise University — Client-side Interactive Controller
  * Pure Vanilla JavaScript (Zero external dependencies)
  */
 
@@ -110,7 +110,7 @@
       month: 'OCT',
       day: '18',
       tag: 'Hackathon',
-      title: 'Apex Global Hackathon 2026',
+      title: 'Sunrise Global Hackathon 2026',
       time: 'Oct 18-20 • Innovation Hub • $50K in Prizes',
     },
     {
@@ -140,7 +140,7 @@
   // State
   // ---------------------------------------------------------------------------
   const state = {
-    theme: localStorage.getItem('apex_theme') || 'light',
+    theme: localStorage.getItem('sunrise_theme') || localStorage.getItem('apex_theme') || 'light',
     activeFilter: 'all',
     courses: [
       { id: 1, name: 'CS 101: Data Structures', credits: 4, grade: 'A' },
@@ -169,7 +169,7 @@
   // ---------------------------------------------------------------------------
   function applyTheme(theme) {
     state.theme = theme;
-    localStorage.setItem('apex_theme', theme);
+    localStorage.setItem('sunrise_theme', theme);
     const sunIcon = document.querySelector('.sun-icon');
     const moonIcon = document.querySelector('.moon-icon');
 
@@ -464,7 +464,7 @@
   // ---------------------------------------------------------------------------
   const BOT_RESPONSES = {
     scholarships:
-      'Apex University awards over $35M in annual merit scholarships! Students with a GPA of 3.4+ automatically qualify for between $2,500 and $12,000/year. Check our Tuition Estimator tool on this page to calculate your award!',
+      'Sunrise University awards over $35M in annual merit scholarships! Students with a GPA of 3.4+ automatically qualify for between $2,500 and $12,000/year. Check our Tuition Estimator tool on this page to calculate your award!',
     deadlines:
       'Fall 2026 Priority Deadline: November 15, 2025. Regular Decision Deadline: February 1, 2026. Spring 2027 Transfer Deadline: October 1, 2026.',
     housing:
@@ -498,7 +498,7 @@
       } else if (lower.includes('gpa') || lower.includes('grade') || lower.includes('calculator')) {
         reply = BOT_RESPONSES.gpa;
       } else if (lower.includes('program') || lower.includes('major') || lower.includes('computer science') || lower.includes('engineering')) {
-        reply = 'Apex offers 120+ accredited programs! Highlights include Computer Science & AI, Robotics, Quantitative Finance, Biomedical Genomics, and Sustainable Architecture.';
+        reply = 'Sunrise offers 120+ accredited programs! Highlights include Computer Science & AI, Robotics, Quantitative Finance, Biomedical Genomics, and Sustainable Architecture.';
       }
 
       addChatMessage(reply, 'bot');
@@ -595,7 +595,7 @@
     document.getElementById('hero-tour-btn').addEventListener('click', () => {
       const el = document.getElementById('campus-life');
       el.scrollIntoView({ behavior: 'smooth' });
-      showToast('Exploring the 250-acre Apex University campus 🏛️');
+      showToast('Exploring the 250-acre Sunrise University campus 🏛️');
     });
 
     document.getElementById('book-consult-btn').addEventListener('click', () => {

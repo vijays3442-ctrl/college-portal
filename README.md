@@ -1,4 +1,4 @@
-# 🏛️ Apex Global University — Campus Web Portal
+# 🏛️ Sunrise University — Campus Web Portal
 
 A modern, responsive, and interactive collegiate web portal showcasing academic programs, student planning tools (GPA Calculator & Tuition Estimator), campus life, admissions timeline, and an interactive virtual campus guide assistant.
 
