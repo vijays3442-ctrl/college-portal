@@ -1627,16 +1627,24 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
     border-bottom: 1px solid var(--border-color);
     box-shadow: var(--shadow-md);
-    transform: translateY(-120%);
-    transition: transform var(--transition-smooth);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-15px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    z-index: 490;
   }
 
   .nav-menu.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
   }
 
   .mobile-toggle-btn {
     display: flex;
+    flex-shrink: 0;
   }
 
   .tuition-calculator-grid {
@@ -1653,6 +1661,68 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 640px) {
+  .header-inner {
+    padding: 0 0.85rem;
+    height: 64px;
+  }
+
+  .brand-logo {
+    gap: 0.5rem;
+  }
+
+  .crest-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .crest-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .brand-title {
+    font-size: 1.05rem;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.45rem;
+  }
+
+  .action-icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  #open-apply-modal-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  #open-apply-modal-btn svg {
+    display: none;
+  }
+
+  .mobile-toggle-btn {
+    width: 24px;
+    height: 18px;
+    margin-left: 2px;
+  }
+
+  .nav-menu {
+    top: 64px;
+  }
+
+  .hero-tag {
+    max-width: 95%;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    padding: 0.4rem 0.85rem;
+  }
+
   .footer-content {
     grid-template-columns: 1fr;
   }
