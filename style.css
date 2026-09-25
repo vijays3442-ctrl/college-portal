@@ -374,9 +374,13 @@ h1, h2, h3, h4, h5, h6 {
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  background: var(--hero-gradient);
+  background-color: #070b14;
+  background-image: linear-gradient(135deg, rgba(11, 17, 32, 0.88) 0%, rgba(15, 23, 42, 0.92) 100%), url('images/hero-campus.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
-  padding: 6rem 0 5rem;
+  padding: 6.5rem 0 5.5rem;
   overflow: hidden;
 }
 
@@ -530,6 +534,92 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
+   About Feature Showcase Banner
+   -------------------------------------------------------------------------- */
+.about-hero-banner {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-banner-img-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 300px;
+}
+
+.about-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.about-hero-banner:hover .about-banner-img {
+  transform: scale(1.04);
+}
+
+.about-banner-tag {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.about-banner-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.about-banner-content p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.about-stats-mini {
+  display: flex;
+  gap: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.25rem;
+}
+
+.stat-mini {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-mini strong {
+  font-size: 1.4rem;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.stat-mini span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
    Pillars / Why Sunrise Grid
    -------------------------------------------------------------------------- */
 .pillars-grid {
@@ -647,6 +737,24 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
+}
+
+.program-discipline-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.discipline-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .degree-badge {
@@ -1002,25 +1110,36 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-md);
 }
 
-.campus-img-placeholder {
-  height: 180px;
+.campus-card-media {
+  height: 200px;
   position: relative;
-  padding: 1rem;
+  overflow: hidden;
+  background-color: var(--bg-surface-elevated);
 }
 
-.facility-lab    { background: linear-gradient(135deg, #1e3a8a, #06b6d4); }
-.facility-lib    { background: linear-gradient(135deg, #7c2d12, #f59e0b); }
-.facility-sports { background: linear-gradient(135deg, #065f46, #10b981); }
-.facility-res    { background: linear-gradient(135deg, #4c1d95, #8b5cf6); }
+.facility-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-.facility-badge {
-  background: rgba(15, 23, 42, 0.6);
+.campus-card:hover .facility-photo {
+  transform: scale(1.08);
+}
+
+.campus-card-media .facility-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(15, 23, 42, 0.8);
   color: #ffffff;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
   font-weight: 700;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .campus-card-body {
@@ -1449,8 +1568,15 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.6rem;
 }
 
-.chat-avatar {
-  font-size: 1.3rem;
+.chat-avatar-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
 }
 
 .chat-status {
@@ -1645,6 +1771,16 @@ h1, h2, h3, h4, h5, h6 {
   .mobile-toggle-btn {
     display: flex;
     flex-shrink: 0;
+  }
+
+  .about-hero-banner {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 1.5rem;
+  }
+
+  .about-banner-img-wrap {
+    height: 240px;
   }
 
   .tuition-calculator-grid {
